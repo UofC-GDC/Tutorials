@@ -102,7 +102,7 @@ the `Mesh Filter` specifies the shape that the `GameObject` has. By itself, this
 
 #### Mesh Renderer
 
-![mesh renderer](./images/meshRenderer)
+![mesh renderer](./images/meshRenderer.png)
 
 This component concerns itself with making objects appear on the screen. It uses the geometry data from the `Mesh Filter` to decide the shape of the object, and it uses a material to determine how the shape looks and how it's affected by lighting.
 

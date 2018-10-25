@@ -83,7 +83,49 @@ Click on any object in the hierarchy, preferably a composite one (One with child
 This last section is easiest to talk about. This is where important debug information shows up, warnings, exceptions, compiler errors, and and debug output from scripts. We'll talk about this somewhat further when discussing scripts themsevles.
 
 ## GameObjects
+`GameObjects`, as you might have up to this point gathered, are the heart and soul of unity. Everything is a `GameObject` in unity. They are what exist in the scene, and what do all of the work. A `GameObject` is defined by `Component`s that are attached to it. You might have noticed earlier the `Transform` component, which comes at the top of most `GameObject`s. This is just one one example of a component, and it happens to be shared by all `GameObects`s. What follows is a discussion of what a component is and some useful components in unity
 
-## Components
+### Components
+A component adds some functionality to a `GameObject`, giving it shape or substance, or even defining how it looks. In fact, components can do anything you might imagine and user-defined components are how we make games. If you click on the `Sphere`, you'll notice it has 4 components. It has a `Transform`, a `Sphere (Mesh Filter)`, a `Mesh Renderer`, and a `Sphere Collider`. The material looks like a component, but in fact it is a field of the `Mesh Renderer`.
+
+#### Transform
+
+![transform](./images/transform.png)
+
+The `Transform` just holds position, scale, and rotation data of an object. An object can be transformed in all axis independently, and all of the coordinates are represented in world space. That is say, an object at `(0, 0, 0)` is at the centre of the world.
+
+#### Mesh Filter
+
+![mesh filter](./images/meshFilter.png)
+
+the `Mesh Filter` specifies the shape that the `GameObject` has. By itself, this component doesn't do much but can be used by other components (ie: `Mesh Renderer`, `Mesh Collider`) for its geometry data. It's the component that corresponds most directly to the models that artists make.
+
+#### Mesh Renderer
+
+![mesh renderer](./images/meshRenderer)
+
+This component concerns itself with making objects appear on the screen. It uses the geometry data from the `Mesh Filter` to decide the shape of the object, and it uses a material to determine how the shape looks and how it's affected by lighting.
+
+#### Collider
+
+![sphere collider](./images/sphereCollider.png)
+
+This component is needed only in the event that you wish to have something happen when two objects collide. There are a handful of basic colliders, `Box Collider`, `Sphere Collider`, and `Capsule Collider`. An object can have as many colliders as you wish, and they can all be edited so as to best approximate the shape of the object. This is tedious, but gives the best results for collisions detections. Alternatively, there is a `Mesh Collider` that will generate a collider based on the geometry data of the associated `Mesh Filter`.
+
+As can be seen, objects are merely the composition of their components. There is one other component that I would like to mention, as it is quite ubiquitous and you are quite likely to need it. It is called a `Rigidbody`. To add it, simply click the big `Add Component` button and search for `Rigidbody`. Once you find it, click on it and it will be added.
+
+#### Rigidbody
+
+![rigidbody](./images/rigidbody.png)
+
+Any object that has a `Rigidbody` applied to it will have physics applied to it. Most of the options behave as you would expect them to, I encourage you to play around with them to see what the do. One key attribute, however, is the `Is Kinematic` switch. Kinematic rigidbodies will have all the physics calculations done, but won't be moved by the physics. This is important because for unity to detect collisions, at least one of the objects in the collision needs to have a `Rigidbody` (and both need colliders).
+
+Later, we will be defining our own components with custom functionality, and they will appear in the inspector very similarily to what to the ones shown here
+
 
 ## Further Reading
+[Unity Manual](https://docs.unity3d.com/Manual/index.html)
+
+[A Great Youtuber for Unity](https://www.youtube.com/user/Brackeys)
+
+[A More Advance Youtuber](https://www.youtube.com/user/Cercopithecan)

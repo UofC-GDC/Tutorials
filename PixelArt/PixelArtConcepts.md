@@ -86,7 +86,9 @@ There is no need to create a gif for creating animations in our games. All you n
 ***
 ## Cool websites
 
-[Colour Wheel](https://colorsupplyyy.com/app/)
+[Colour Wheel 1](https://colorsupplyyy.com/app/)
+
+[Colour Wheel 2](https://color.adobe.com/create/color-wheel/)
 
 [An explanation behind "bits"](https://www.youtube.com/watch?v=QaIoW1aL9GE)
 
